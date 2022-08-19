@@ -100,7 +100,7 @@ class MobileScannerController {
         torchState.value = state;
         break;
       case 'barcode':
-        final image = returnImage ? event['image'] as Uint8List : null;
+        final image = returnImage ? event['image'] as Uint8List? : null;
         final barcode = Barcode.fromNative(data as Map? ?? {}, image);
         barcodesController.add(barcode);
         break;
